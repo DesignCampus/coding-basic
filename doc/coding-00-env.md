@@ -31,8 +31,8 @@ title: "コーディング前期 1w - 環境構築"
 趣味でイラストを描きつつ、実務ではweb、印刷物など幅広いデザインに携わってます。
 </div>
 
-<div><img src="/img/0w/img-kuwabara.jpg" alt="kuwabara" style="width: 30%">
-<img src="/img/0w/hyakusaru2.jpeg" alt="saruippai" style="width: 20%">
+<div><img src="img/0w/img-kuwabara.jpg" alt="kuwabara" style="width: 30%">
+<img src="img/0w/hyakusaru2.jpeg" alt="saruippai" style="width: 20%">
 </div>
 
 --
@@ -157,7 +157,7 @@ bodyタグの中に、Hello Worldと書いてみましょう
 --
 
 今つくったindex.htmlをブラウザで表示させてみましょう！
-<img src="/img/0w/index.png" style="width: 100%">
+<img src="img/0w/index.png" style="width: 100%">
 
 ---
 
@@ -173,7 +173,7 @@ bodyタグの中に、Hello Worldと書いてみましょう
 1. 左側メニューのアイコン【拡張機能】をクリック
 1. テキストボックスにLive serverと打ち込む
 1. Live Serverの位置にあるinstallをクリック
-<img src="/img/0w/livesuver.jpg" style="width: 100%">
+<img src="img/0w/livesuver.jpg" style="width: 100%">
 
 --
 
@@ -215,14 +215,14 @@ LiveServerを使ってみよう
 1. さっきつくった「index.html」をvscodeで開く
 1. 画面下部、「Go Live」をクリック
 
-<img src="/img/0w/livesuver2.jpg" style="width: 100%">
+<img src="img/0w/livesuver2.jpg" style="width: 100%">
 
 --
 
 <div style="text-align:left">
 ブラウザで表示されます<br>
 ファイルを編集すると、ブラウザ更新しなくても、自動で反映してくれます
-<img src="/img/0w/livesuver3.png" style="width: 100%">
+<img src="img/0w/livesuver3.png" style="width: 100%">
 </div>
 
 --
