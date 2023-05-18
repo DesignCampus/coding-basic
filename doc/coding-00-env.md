@@ -1,6 +1,6 @@
 ---
 theme: "simple"
-customTheme : "my-theme"
+customTheme : "dc-theme"
 transition: "convex"
 slideNumber: false
 title: "コーディング前期 1w - 環境構築"
@@ -8,15 +8,14 @@ title: "コーディング前期 1w - 環境構築"
 
 # コーディング<br>ライブ授業
 <h2 class="firstPage">「環境構築」</h2>
-<img src="./img/1w/logo_bg_none.png" style="width: 16%;">
+<img src="./img/logo_bg_none.png" style="width: 16%;">
 
 ---
 
 1. 自己紹介
-1. コーディングって
-1. 準備
-1. Visual Studio Code
-1. 環境構築
+1. ファイルを用意しよう
+1. Visual Studio Codeとは
+1. LiveServerプラグイン
 
 ---
 
@@ -32,8 +31,8 @@ title: "コーディング前期 1w - 環境構築"
 趣味でイラストを描きつつ、実務ではweb、印刷物など幅広いデザインに携わってます。
 </div>
 
-<div><img src="./img/1w/img-kuwabara.jpg" alt="kuwabara" style="width: 30%">
-<img src="./img/1w/hyakusaru2.jpeg" alt="saruippai" style="width: 20%">
+<div><img src="/img/0w/img-kuwabara.jpg" alt="kuwabara" style="width: 30%">
+<img src="/img/0w/hyakusaru2.jpeg" alt="saruippai" style="width: 20%">
 </div>
 
 --
@@ -42,31 +41,9 @@ title: "コーディング前期 1w - 環境構築"
 
 https://kuwage.site/
 
----
-
-## コーディングって？
-
 --
 
-<div class="separateBox">
-    <div class="separateBox-txt"><em>デザイン</em><br>洋服で言うなら型紙、設計図</div>
-    <div class="separateBox-img"><img src="./img/1w/image04.png"></div>
-</div>
-
---
-
-<div class="separateBox">
-    <div class="separateBox-txt"><em>コーディング</em><br>縫製して製品にする部分</div>
-    <div class="separateBox-img"><img src="./img/1w/image05.png"></div>
-</div>
-
---
-
-## 準備
-
---
-
-### ファイルを用意しよう
+## ファイルを用意しよう
 
 --
 
@@ -76,17 +53,11 @@ root(任意の名称のフォルダ)
 │ ├ css：CSSを格納
 │ ├ images：画像ファイルを格納
 │ └ js：JavaScriptを格納
-│
-├ index.html
 ```
 
 ---
 
-## Visual Studio Code
-
---
-
-### Visual Studio Codeとは
+## Visual Studio Codeとは
 
 --
 
@@ -104,8 +75,7 @@ root(任意の名称のフォルダ)
 
 --
 
-終わってなかったら、授業受けながらしてね。  
-プラグインもね
+終わってなかったら今インストールしましょう
 
 --
 
@@ -114,6 +84,10 @@ root(任意の名称のフォルダ)
 --
 
 用意しておいたフォルダを、VSCodeにドラッグ＆ドロップ！
+
+--
+
+imdex.htmlをつくろう
 
 --
 
@@ -180,9 +154,10 @@ bodyタグの中に、Hello Worldと書いてみましょう
 
 ```
 
----
+--
 
-## 本日のメインイベント
+今つくったindex.htmlをブラウザで表示させてみましょう！
+<img src="/img/0w/index.png" style="width: 100%">
 
 ---
 
@@ -198,11 +173,11 @@ bodyタグの中に、Hello Worldと書いてみましょう
 1. 左側メニューのアイコン【拡張機能】をクリック
 1. テキストボックスにLive serverと打ち込む
 1. Live Serverの位置にあるinstallをクリック
-<img src="./img/1w/livesuver.jpg" style="width: 100%">
+<img src="/img/0w/livesuver.jpg" style="width: 100%">
 
----
+--
 
-## LiveServerプラグインとは
+### LiveServerプラグインとは
 
 --
 
@@ -240,14 +215,14 @@ LiveServerを使ってみよう
 1. さっきつくった「index.html」をvscodeで開く
 1. 画面下部、「Go Live」をクリック
 
-<img src="./img/1w/livesuver2.jpg" style="width: 100%">
+<img src="/img/0w/livesuver2.jpg" style="width: 100%">
 
 --
 
 <div style="text-align:left">
 ブラウザで表示されます<br>
 ファイルを編集すると、ブラウザ更新しなくても、自動で反映してくれます
-<img src="./img/1w/livesuver3.png" style="width: 100%">
+<img src="/img/0w/livesuver3.png" style="width: 100%">
 </div>
 
 --
