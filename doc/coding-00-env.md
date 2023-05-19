@@ -41,7 +41,7 @@ title: "コーディング前期 1w - 環境構築"
 
 https://kuwage.site/
 
---
+---
 
 ## ファイルを用意しよう
 
@@ -87,7 +87,8 @@ root(任意の名称のフォルダ)
 
 --
 
-imdex.htmlをつくろう
+index.htmlをつくろう
+<video playsinline controls src="img/0w/index.mov"></video>
 
 --
 
