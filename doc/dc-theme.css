@@ -70,6 +70,11 @@
     .reveal h3 {
         padding:.5em;
         color: #2E758C;
+        line-height: 1.2;
+    }
+    .reveal h3:has(> small) {
+        margin-bottom: 0;
+        padding-bottom: .25em;
     }
     .reveal h4 {
         padding:.5em;
@@ -89,6 +94,11 @@
         margin-top: .25em;
     }
 
+    .reveal small {
+        font-size: 0.6em;
+        line-height: 1em;
+        vertical-align: baseline;
+    }
 
     .reveal code {
         font-size: .64em;

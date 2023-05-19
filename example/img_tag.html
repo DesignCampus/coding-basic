@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>img</title>
+	<meta name="robots" content="NOINDEX,NOFOLLOW">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+		.loadingLazyTest {
+			/* margin-top: 5000px; */
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>imgタグ</h1>
+
+	<h2>width属性とheight属性</h2>
+	<h3>1MB</h3>
+	<!-- <img src="images/1MB.png"> -->
+
+	<h3>10MB</h3>
+	<!-- <img src="images/10MB.png"> -->
+
+	<h2>alt</h2>
+	<img src="images/_glamping.jpg" width="1920" height="1280" alt="グランピング">
+
+	<h2>loading属性とdecoding属性</h2>
+	<img src="images/neko01.jpg" width="1280" height="960" decoding="async">
+	<img src="images/neko02.jpg" width="1280" height="960" loading="lazy" class="loadingLazyTest">
+
+	<h2>srcset属性</h2>
+	<img srcset="images/320.png 1x, images/640.png 2x, images/1280.png 3x" src="images/320.png" width="320" height="120">
+
+	<h2>pictureタグ</h2>
+	<h3>画像のだし分けのみ</h3>
+	<picture>
+		<source srcset="images/1280480.avif" type="image/avif">
+		<source srcset="images/1280480.webp" type="image/webp">
+		<img src="images/1280480.png" alt="" width="1280" height="480">
+	</picture>
+
+	<h3>サイズのだし分けもあり</h3>
+	<picture>
+		<source srcset="images/320240.png" media="(max-width:375px)">
+		<source srcset="images/640640.png" media="(max-width:768px)">
+		<source srcset="images/1280480.avif" type="image/avif">
+		<source srcset="images/1280480.webp" type="image/webp">
+		<img src="images/1280480.png" alt="" width="1280" height="480">
+	</picture>
+
+</body>
+</html>

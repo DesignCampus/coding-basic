@@ -5,3 +5,6 @@ node_modules/
 * - コピー.html
 log-*/
 *.code-workspace
+*.map
+.vscode/
+*.config
