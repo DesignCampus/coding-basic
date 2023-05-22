@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>img</title>
+
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="robots" content="NOINDEX,NOFOLLOW">
+	<style>
+		*, *::before, *::after {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		* + :where(h1,h2,h3,h4,h5,h6) {
+			margin-top: 2.4em;
+		}
+		h1 {
+			font-size: 3.6em;
+		}
+		h2 {
+			font-size: 1.8em;
+		}
+		.accordion {
+			margin-top: 1.6em;
+		}
+		.accordion-deco summary {
+			list-style: none;
+			display: block;
+			padding: .5rem;
+			background-color: #eee;
+			cursor: pointer;
+		}
+		.accordion-deco summary::after {
+			content: "+";
+			display: inline-block;
+			width: 1rem;
+			font-weight: 700;
+			text-align: center;
+		}
+		.accordion-deco details[open] > summary::after {
+			content: "-";
+		}
+		.accordion-deco summary:hover {
+			cursor: pointer;
+		}
+		.accordion-deco p { 
+			padding: .5rem;
+			border: 1px solid #ddd;
+
+		}
+
+		.modal_demo {
+			margin-top: 2.4em;
+		}
+		.modal_body {
+			position: sticky;
+			top: 50%;
+			left: 50%;
+			padding: 1.6em;
+			translate: -50% -50%;
+		}
+		.modal_body::backdrop {
+		background: rgb(1, 179, 194, .7);
+		}
+</style>
+</head>
+
+<body>
+
+	<h1>おまけ</h1>
+
+	<h2>detailsタグとsummaryタグ</h2>
+
+	<div class="accordion">
+		<details>
+			<summary>ここがタイトル</summary>
+			<p>ここは本文</p>
+		</details>
+		<details>
+			<summary>ここがタイトル</summary>
+			<p>ここは本文</p>
+		</details>
+	</div>
+
+	<div class="accordion accordion-deco">
+		<details>
+			<summary>ここがタイトル</summary>
+			<p>ここは本文</p>
+		</details>
+		<details>
+			<summary>ここがタイトル</summary>
+			<p>ここは本文</p>
+		</details>
+	</div>
+
+	<div class="modal_demo">
+		<button id="js-open">開く</button>
+	</div>
+
+	<dialog id="js-modal" class="modal_body">
+		<p>ここはダイアログ</p>
+		<button id="js-close">閉じる</button>
+	</dialog>
+
+	<script>
+	const modal = document.getElementById('js-modal'),
+		btn_open = document.getElementById('js-open'),
+		btn_close = document.getElementById('js-close');
+
+	btn_open.addEventListener('click', function (e) {
+		e.preventDefault;
+		modal.showModal();
+	}, false);
+	btn_close.addEventListener('click', function (e) {
+		e.preventDefault;
+		modal.close();
+	}, false);
+	</script>
+
+</body>
+</html>

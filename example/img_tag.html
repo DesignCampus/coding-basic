@@ -4,16 +4,35 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
+
 	<title>img</title>
+
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
 	<meta name="robots" content="NOINDEX,NOFOLLOW">
 	<style>
-		* {
+		*, *::before, *::after {
 			margin: 0;
 			padding: 0;
+			box-sizing: border-box;
+		}
+		* + :where(h1,h2,h3,h4,h5,h6) {
+			margin-top: 2.4em;
+		}
+		h1 {
+			font-size: 3.6em;
+		}
+		h2 {
+			font-size: 1.8em;
 		}
 		img {
-			width: 100%;
+			width: auto;
+			max-width: 100%;
 			height: auto;
+		}
+		code {
+			word-wrap: break-word;
+			word-break: break-all
 		}
 		.loadingLazyTest {
 			/* margin-top: 5000px; */
@@ -26,31 +45,50 @@
 	<h1>imgタグ</h1>
 
 	<h2>width属性とheight属性</h2>
+	<p>画像のサイズをきちんと書くことでレイアウトシフトを防ぐ事が出来る</p>
 	<h3>1MB</h3>
-	<!-- <img src="images/1MB.png"> -->
+	<img src="images/1MB.png">
 
 	<h3>10MB</h3>
-	<!-- <img src="images/10MB.png"> -->
+	<img src="images/10MB.png">
 
 	<h2>alt</h2>
+	<p>代替のテキストを設定<wbr></p>
 	<img src="images/_glamping.jpg" width="1920" height="1280" alt="グランピング">
 
 	<h2>loading属性とdecoding属性</h2>
+	<p>読み込みのタイミングと表示の仕組み</p>
+	<ul>
+		<li>loading：lazy,eager(規定)</li>
+		<li>decoding：sync,async,auto(規定)</li>
+	</ul>
 	<img src="images/neko01.jpg" width="1280" height="960" decoding="async">
+	<p>本当に遅延してるのか確認しよう</p>
 	<img src="images/neko02.jpg" width="1280" height="960" loading="lazy" class="loadingLazyTest">
+	<p>※<code>loading="lazy"</code>とdecoding="async"は併記が可能</p>
 
 	<h2>srcset属性</h2>
+	<p>画面幅などで画像を出し分ける</p>
+
+	<h3>デバイスピクセル比</h3>
 	<img srcset="images/320.png 1x, images/640.png 2x, images/1280.png 3x" src="images/320.png" width="320" height="120">
 
+	<!-- ※とはいえChromeではきちんと動作しなくてFirefoxはいけたり、同じ画像使ってると先にキャッシュされたのが使われたりはある
+	<h3>ビューポート</h3>
+	<img srcset="images/320.png 320w, images/640.png 640w, images/1280.png 1280w" src="images/320.png" width="320" height="120">
+	<h3>ビューポートとサイズ指定</h3>
+	<img srcset="images/320.png 320w, images/640.png 640w, images/1280.png 1280w" src="images/320.png" sizes="(max-width: 767px) 80vw, 100vw" width="320" height="120">
+	-->
+
 	<h2>pictureタグ</h2>
-	<h3>画像のだし分けのみ</h3>
+	<h3>使用できる形式で画像のだし分け</h3>
 	<picture>
 		<source srcset="images/1280480.avif" type="image/avif">
 		<source srcset="images/1280480.webp" type="image/webp">
 		<img src="images/1280480.png" alt="" width="1280" height="480">
 	</picture>
 
-	<h3>サイズのだし分けもあり</h3>
+	<h3>使用できる形式で画像のだし分けつつ、サイズのだし分けも</h3>
 	<picture>
 		<source srcset="images/320240.png" media="(max-width:375px)">
 		<source srcset="images/640640.png" media="(max-width:768px)">
