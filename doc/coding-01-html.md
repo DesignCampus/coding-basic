@@ -31,9 +31,8 @@ title: "コーディング基礎 - HTML"
 - Web運用や集客のコンサル
 - DXサポート
 - 教育事業
-- はてはパソコンの先生みたいなことまで  
-
-<img src="./img/profile/staff_koizumi.jpg" alt="koizumi">  
+<div><img src="./img/profile/staff_koizumi.jpg" alt="koizumi" style="width: 15%"></div>
+<div>
 
 --
 
@@ -287,6 +286,11 @@ Webサイトの大半は、テキストと画像
 
 --
 
+- ユーザーの興味を引き、理解度を深める
+- 実はSEOにも効果がある
+
+--
+
 #### サンプルコード
 
 /example/img_tag.html
@@ -301,10 +305,37 @@ Webサイトの大半は、テキストと画像
 - summaryタグ
 - dialogタグ
 
+---
+
+## 実習：ネームカードを作ろう
+
 --
 
+簡単なネームカードをHTMLで作成します。  
+CSSの講義は来週ですが、基本的なことで対応できると思うのでそこまで進めていただけたらと思います。
 
+HTMLもCSSもindex.htmlに記載してください、
 
+--
+
+<span style="font-size: 1.6em;">11:45 まで</span>
+
+---
+
+## 来週に向けて
+
+--
+
+### 課題
+
+ネームカードを完成させてください  
+<small>Firefox八王子のサイトも進めてね</small>
+
+--
+
+### 予告
+
+CSSだよ
 
 
 
