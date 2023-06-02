@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>anime</title>
+	<style>
+
+	</style>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		.canvas {
+			position: absolute;
+			top: 400px;
+			left: 400px;
+			perspective: 1000px;
+		}
+		.box {
+			transform-style: preserve-3d;
+			    transform: rotateX(347deg) rotateY(332deg);
+			animation: rotate 20000ms linear infinite;
+		}
+		.surface {
+			position: absolute;
+			display: grid;
+			place-items: center;
+			width: 200px;
+			height: 200px;
+			background: rgb(150,150,150,.7);
+			border: 1px solid #000;
+			font-size: 100px;
+		}
+		.surface-1 {
+			transform: translateZ(100px);
+		}
+		.surface-2 {
+			transform: translateY(100px) rotateX(270deg);
+		}
+		.surface-3 {
+			transform: translateX(100px) rotateY(-270deg);
+		}
+		.surface-4 {
+			transform: translateX(-100px) rotateY(-90deg);
+		}
+		.surface-5 {
+			transform: translateY(-100px) rotateX(90deg);
+		}
+		.surface-6 {
+			transform: translateZ(-100px) rotateY(180deg);
+			text-decoration: underline;
+		}
+		@keyframes rotate {
+		0% {
+			transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+			transform: rotateX(360deg) rotateY(720deg);
+		}
+		}
+	</style>
+</head>
+
+<body>
+<h1>3DっぽいアニメもCSSだけでできる</h1>
+<div class="canvas">
+	<div class="box">
+		<div class="surface surface-1">1</div>
+		<div class="surface surface-2">2</div>
+		<div class="surface surface-3">3</div>
+		<div class="surface surface-4">4</div>
+		<div class="surface surface-5">5</div>
+		<div class="surface surface-6">6</div>
+	</div>
+</div>
+<a href="https://dev.oro.com/posts/2017/09/design/css_3d/">https://dev.oro.com/posts/2017/09/design/css_3d/</a>
+</body>
+
+</html>

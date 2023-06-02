@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS Grid 3</title>
+	<style>
+		*:where(:not(iframe,canvas,img,svg,video):not(svg *,symbol *)){all:unset;display:revert}*,*::before,*::after{box-sizing:border-box}a,button{cursor:revert}ol,ul,menu{list-style:none}img{max-width:100%}table{border-collapse:collapse}textarea{white-space:revert}meter{-webkit-appearance:revert;appearance:revert}::placeholder{color:unset}:where([hidden]){display:none}:where([contenteditable]){-moz-user-modify:read-write;-webkit-user-modify:read-write;overflow-wrap:break-word;-webkit-line-break:after-white-space}:where([draggable="true"]){-webkit-user-drag:element}
+	</style>
+	<style>
+		body {
+			overflow-x: hidden;
+		}
+		h2 {
+			font-size: 2.4rem;
+		}
+		section {
+			width: min(80vw, 800px);
+			margin: 100px auto 0;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1>CSS Tips</h1>
+	<section>
+		<h2>Floatの便利な使い方 - shape-outside</h2>
+		<style>
+			.tip_float img {
+				float: left;
+				width: 200px;
+				height: auto;
+				border-radius: 50%;
+				shape-outside: ellipse();
+			}
+		</style>
+		<div class="tip_float">
+			<img src="./images/neko01.jpg" alt="">
+			<p>ねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこねこねここねこ</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>コンテンツの幅に合わせる - fit-content</h2>
+		<style>
+			.tip_fitcontent > * {
+				margin-top: 10px;
+			}
+			.tip_fitcontent :where(p, span) {
+				background-color: #ddd;
+			}
+			.tip_fitcontent p:nth-of-type(2) {
+				width: fit-content;
+			}
+			.tip_fitcontent span:nth-of-type(2) {
+				display: inline-block;
+			}
+			.tip_fitcontent h3 {
+				border-bottom: 4px solid #2E758C;
+			}
+			.tip_fitcontent h3:nth-of-type(2) {
+				width: fit-content;
+			}
+			.tip_fitcontent h3:nth-of-type(3) {
+				border: none;
+				text-decoration: underline;
+			}
+		</style>
+		<div class="tip_fitcontent">
+			<p>幅いっぱいになる</p>
+			<p>幅にあってる</p>
+			<span>インラインブロック</span>
+			<span>インライン</span>
+			<h3>見出しに下線</h3>
+			<h3>見出しに下線</h3>
+			<h3>見出しに下線</h3>
+		</div>
+	</section>
+
+	<section>
+		<h2>計算する</h2>
+		<style>
+			.tip_calc div {
+				background-color: #ddd;
+			}
+			.tip_calc div:nth-of-type(1) {
+				width: 100%;
+			}
+			.tip_calc div:nth-of-type(2) {
+				width: calc(100% - 20%);
+			}
+			.tip_calc div:nth-of-type(3) {
+				width: calc(100% - 20px);
+			}
+			.tip_calc div:nth-of-type(4) {
+				width: calc((1 + 2) * 100px);
+			}
+			
+		</style>
+		<div class="tip_calc">
+			<div>100%</div>
+			<div>100% - 20%</div>
+			<div>100% - 20px</div>
+			<div>(1 + 2) * 100px</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>大きさの指定</h2>
+		<style>
+			.tip_size {
+				background: #ddd;
+				width: 100vw;
+				margin-left: calc(50% - 50vw);
+			}
+			.size_min {
+				width: min(80%, 300px); /* 80%と300pxを比較して300pxより大きくても300px迄しか広がらない、それ以外は80% */
+				background: #DAEEF5;
+			}
+			.size_max {
+				width: max(80%, 300px); /* 80%と300pxを比較して300pxより小さくても300px迄しか縮まない、それ以外は80% */
+				background: #77AFC1;
+			}
+			.size_clamp {
+				width: clamp(100px, 50%, 700px); /* 80%と300pxを比較して300pxより小さくても300px迄しか縮まない、それ以外は80% */
+				background: #48899E;
+				/* font-size: clamp(16px, 5vw, 56px); */
+			}
+		</style>
+		<div class="tip_size">
+			<div class="size_min">min(推奨値, 最大値)</div>
+			<div class="size_max">max(推奨値, 最小値)</div>
+			<div class="size_clamp">clamp(最小値, 推奨値, 最大値)</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>メディアクエリを直感的に</h2>
+		<style>
+			@media (max-width: 799px) {
+				.query_usual-01 {
+					background: #DAEEF5;
+				}
+			}
+			@media (min-width: 375px) {
+				.query_usual-02 {
+					background: #DAEEF5;
+				}
+			}
+			@media (min-width: 375px) and (max-width: 799px){
+				.query_usual-03 {
+					background: #DAEEF5;
+				}
+			}
+			/* -------- range記法 -------- */
+			@media (width < 800px) {
+				.query_range-01 {
+					background: #77AFC1;
+				}
+			}
+			@media (375px <= width) {
+				.query_range-02 {
+					background: #77AFC1;
+				}
+			}
+			@media (375px <= width < 800px) {
+				.query_range-03 {
+					background: #77AFC1;
+				}
+			}
+		</style>
+		<div class="tip_query">
+			<div class="query_usual-01">画面幅が800px未満</div>
+			<div class="query_usual-02">画面幅が375px以上</div>
+			<div class="query_usual-03">375px以上800px未満</div>
+			<div class="query_range-01">画面幅が800px未満</div>
+			<div class="query_range-02">画面幅が375px以上</div>
+			<div class="query_range-03">375px以上800px未満</div>
+		</div>
+	</section>
+	
+	<section>
+		<h2>疑似クラスで否定</h2>
+		<style>
+			.tip_not ol + ol {
+				margin-top: 80px;
+			}
+			.tip_not li {
+				background: #DAEEF5;
+			}
+			.not_no li {
+				margin-top: 10px;
+			}
+			.not_no li:first-child {
+				margin-top: 0;
+			}
+			.not_yes li:not(:first-child) {
+				margin-top: 10px;
+			}
+		</style>
+		<div class="tip_not">
+			<ol class="not_no">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+			<ol class="not_yes">
+				<li>A</li>
+				<li>B</li>
+				<li>C</li>
+				<li>D</li>
+				<li>E</li>
+			</ol>
+		</div>
+	</section>
+	
+	<section>
+		<h2>animationとtransition</h2>
+		<style>
+			.move_transition {
+				width: 100px;
+				height: 24px;
+				background: #DAEEF5;
+				/*transition: プロパティを指定 どのくらいの時間をかけるか 変化の仕方 開始までの遅延時間;*/
+				transition: all 1s ease-in .5s;
+			}
+			.move_transition:hover {
+				width: 800px;
+			}
+			.move_anime {
+				width: 100px;
+				height: 24px;
+				background: #77AFC1;
+				/*animation: アニメーションの名前を指定 どのくらいの時間をかけるか 変化の仕方 開始までの遅延時間 繰り返し 再生方向 実行前後の状態 実行するかしないか;*/
+				animation: move_anime 1s ease-in .5s infinite normal forwards running;
+			}
+			@keyframes move_anime {
+				0% {
+					width: 100px;
+				}
+				30% {
+					width: 50px;
+					background: #DAEEF5;
+				}
+				60% {
+					background: #DAEEF5;
+				}
+				60%, 80% {
+					width: 300px;
+				}
+				100% {
+					width: 100px;
+				}
+			}
+		</style>
+		<div class="tip_move">
+			<div class="move_transition">
+			</div>
+			<div class="move_anime">
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>marginとpaddingの使いどころ</h2>
+	</section>
+	
+
+
+</body>
+
+</html>
