@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQueryとの違い - JavaScript</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script>
+</head>
+
+<body>
+	<h1>jQuery</h1>
+	<div>
+		<h2 id="js-subject">コーディング</h2>
+		<ul class="js-content">
+			<li class="js-itme">HTML</li>
+			<li class="js-itme">CSS</li>
+			<li class="js-itme">JavaScript</li>
+		</ul>
+	</div>
+
+	<script>
+		// 要素の取得
+		console.warn("/* ---- idを取得してみる ---- */");
+		console.log($('#js-subject'));
+		console.log(document.getElementById('js-subject'));
+		console.log(document.querySelector('#js-subject'));
+
+		console.warn("/* ---- classを取得してみる ---- */");
+		console.log($('.js-content'));
+		console.log(document.getElementsByClassName('js-content'));
+		console.log(document.querySelector('.js-content'));
+
+		console.warn("/* ---- 複数あるclassを取得してみる ---- */");
+		console.log($('.js-itme'));
+		console.log(document.getElementsByClassName('js-itme'));
+		console.log(document.querySelector('.js-itme'));
+		console.log(document.querySelectorAll('.js-itme'));
+
+		console.warn("/* ---- querySelectorはCSSのセレクタと同じ使い方でjQueryの要素取得も実はほぼ同じ ---- */");
+		console.log($('.js-content > li:nth-child(2)'));
+		console.log(document.querySelector('.js-content > li:nth-child(2)'));
+
+		// イベント
+		/* 
+		 * jQuery
+		 * $('セレクタ等').on('イベント', function() {処理});
+		 */
+		const $item_html = $('.js-content > li:nth-child(1)');
+		$item_html.on('click', function() { 
+			$(this).css('background-color', 'red');
+		});
+
+		/*
+		 * Vanilla
+		 * セレクタ等.addEventListener("イベント", function() {処理});
+		 */
+		const item_js = document.querySelector('.js-content > li:nth-child(3)');
+		item_js.addEventListener("click", function () {
+			this.style.backgroundColor = 'blue';
+		});
+	</script>
+
+
+</body>
+
+</html>

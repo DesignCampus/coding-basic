@@ -212,7 +212,7 @@ HTMLは新たにcards.htmlというHTMLを作成して記載してください�
 
 ### 予告
 
-CSSだよ
+JavaScriptだよ
 
 
 
