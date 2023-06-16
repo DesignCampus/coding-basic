@@ -58,14 +58,14 @@
 			margin-top: 2.4em;
 		}
 		.modal_body {
-			position: sticky;
+			position: absolute;
 			top: 50%;
 			left: 50%;
 			padding: 1.6em;
 			translate: -50% -50%;
 		}
 		.modal_body::backdrop {
-		background: rgb(1, 179, 194, .7);
+			background: rgb(1, 179, 194, .7);
 		}
 </style>
 </head>
@@ -121,6 +121,34 @@
 		modal.close();
 	}, false);
 	</script>
+
+	<!-- /* 2023.06.16追記 */ -->
+	<h2>popover属性</h2>
+	<p>作成時点ではChromeとEdgeのみで動作です。</p>
+	<p><a href="https://caniuse.com/?search=popover">Can I Useで確認</a></p>
+
+	<style>
+	#popover {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		padding: 1.6em;
+		translate: -50% -50%;
+	}
+	#popover::backdrop {
+	  background: rgb(190, 190, 190, .7);
+	}
+	</style>
+
+	<button popovertarget="popover">popover属性のテスト</button>
+	
+	<div id="popover" popover>
+		<p>popover属性でひらいたよ<p>
+		<button popovertarget="popover" popovertargetaction="hide">閉じる</button>
+	</div>
+
+
+
 
 </body>
 </html>

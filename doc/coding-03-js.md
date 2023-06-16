@@ -7,7 +7,7 @@ title: "コーディング基礎 - JavaScript"
 ---
 
 # コーディング基礎<br>ライブ授業
-<h2 class="firstPage">2週目「JavaScript」</h2>
+<h2 class="firstPage">3週目「JavaScript」</h2>
 <img src="./img/logo_bg_none.png" style="width: 16%;">
 
 ---
