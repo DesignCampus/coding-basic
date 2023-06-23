@@ -161,6 +161,8 @@
 
     .reveal .t-l {
         text-align: left;
+        width: fit-content;
+        margin: auto;
     }
 
     .reveal .marker-underline {
@@ -225,4 +227,18 @@
     .reveal .prBox .prBox_item ul {
         list-style: none;
         margin-top: .25em;
+    }
+
+    /* 補足用のボックス */
+    .reveal .box {
+        width: fit-content;
+        margin: auto;
+        padding: .5em 1em;
+        background: #ededed;
+        text-align: left;
+    }
+    .reveal .box + .box  {
+        margin-top: 1em;
+    }
+    .reveal .box-sup {
     }
